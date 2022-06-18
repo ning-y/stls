@@ -14,11 +14,11 @@ module frameallowed(
         thickness=2, stacking_body_size_tolerance=0.5,
         stacking_height_sans_head_tolerance=0.5) {
     // Use this for an intersect, to trim protruding elements.
-            
+
     head_size = head_size[0] == undef ? [head_size, head_size] : head_size;
     body_size = body_size[0] == undef ? [body_size, body_size] : body_size;
     foot_size = foot_size[0] == undef ? [foot_size, foot_size] : foot_size;
-            
+
     union() {
         frame(
             head_size=head_size, head_height=head_height, neck_height=neck_height,
@@ -142,10 +142,10 @@ module roundedsquare(
     // - fn :: the $fn parameter for circles, used for all rounded corners
     // - really_small_number :: a number which is effectively zero but not
     //                          actually zero; used internally to draw points
-    
+
     size = size[0] == undef ? [size, size] : size;
     r = r[0] == undef ? [r, r, r, r] : r;
-    
+
     translate(center ? [-size[0]/2, -size[1]/2] : [0, 0])
         hull() {
             // Top-right corner

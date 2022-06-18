@@ -13,7 +13,7 @@ module box_sloped_lipped(head_size=1*50, head_height=1*25) {
     head_size = head_size[0] == undef ? [head_size, head_size] : head_size;
     body_size = [head_size[0]-4.5, head_size[1]-4.5];
     foot_size = [head_size[0]-6, head_size[1]-6];
-    
+
     intersection() {
         frameallowed(
             head_size=head_size, head_height=head_height,
